@@ -130,6 +130,5 @@ def binario2octal(number):
 
 def binario2hexa(number):
     aux = binario2decimal(number)
-    print(aux)
     result = int(decimal2hexa(aux))
     return result
