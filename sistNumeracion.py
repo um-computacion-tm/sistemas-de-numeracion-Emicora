@@ -8,13 +8,13 @@ def decimal2binario(number):
     if number == 0:
 
         return 0
-    while number > 0:
+    while number >= 2:
 
         result += str(number%2)
         number //= 2
 
     result += str(number)
-
+   
     for i in range(len(result)-1,-1,-1):
         
         aux += result[i] 
@@ -131,4 +131,24 @@ def binario2octal(number):
 def binario2hexa(number):
     aux = binario2decimal(number)
     result = int(decimal2hexa(aux))
+    return result
+
+def octal2binario(number):
+    aux = octal2decimal(number)
+    result = decimal2binario(aux)
+    return result
+
+def octal2hexa(number):
+    aux = octal2decimal(number)
+    result = decimal2hexa(aux)
+    return result
+
+def hexa2binario(number):
+    aux = hexa2decimal(number)
+    result = decimal2binario(aux)
+    return result
+
+def hexa2octal(number):
+    aux = hexa2decimal(number)
+    result = decimal2octal(aux)
     return result

@@ -1,20 +1,27 @@
 import unittest
 
 from sistNumeracion import decimal2binario 
-from sistNumeracion import binario2decimal
 from sistNumeracion import decimal2octal
-from sistNumeracion import octal2decimal
 from sistNumeracion import decimal2hexa
-from sistNumeracion import hexa2decimal
+from sistNumeracion import binario2decimal
 from sistNumeracion import binario2octal
 from sistNumeracion import binario2hexa
+from sistNumeracion import octal2decimal
+from sistNumeracion import octal2binario
+from sistNumeracion import octal2hexa
+from sistNumeracion import hexa2decimal
+from sistNumeracion import hexa2binario
+from sistNumeracion import hexa2octal
 
 class Test_sistNumeracion(unittest.TestCase):
     def testDecimal2Binario(self):
-        self.assertEqual(decimal2binario(97),'01100001')
+        self.assertEqual(decimal2binario(97),'1100001')
 
     def testBinario2Decimal(self):
         self.assertEqual(binario2decimal('01011100'),92)
+
+    def testDecimal2Binario2(self):
+        self.assertEqual(decimal2binario(2629),'101001000101')
 
     def testDecimal2octal(self):
         self.assertEqual(decimal2octal(55),'67')
@@ -39,6 +46,18 @@ class Test_sistNumeracion(unittest.TestCase):
 
     def testBinario2hexa(self):
         self.assertEqual(binario2hexa('1110110'),76)
+
+    def testOctal2binario(self):
+        self.assertEqual(octal2binario('55'),'101101')
+
+    def testOctal2hexa(self):
+        self.assertEqual(octal2hexa('154'),'6C')
+
+    def testHexa2binario(self):
+        self.assertEqual(hexa2binario('A45'),'101001000101')
+
+    def testHexa2octal(self):
+        self.assertEqual(hexa2octal('AC4'),'5304')
 
     
 if __name__=="__main__":
